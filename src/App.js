@@ -1,4 +1,4 @@
-import { useCallback, useReducer, useRef, useState } from 'react';
+import { useCallback, useReducer, useRef } from 'react';
 import './App.css';
 import TodoInsert from './components/TodoInsert';
 import TodoList from './components/TodoList';
@@ -24,7 +24,7 @@ function todoReducer(todos, action) {
       return todos.concat(action.todo);
     case 'REMOVE':
       return todos.filter((todo) => todo.id !== action.id);
-    case 'TOGGGLE':
+    case 'TOGGLE':
       return todos.map((todo) =>
         todo.id === action.id ? { ...todo, checked: !todo.checked } : todo,
       );
